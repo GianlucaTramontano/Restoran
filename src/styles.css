@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'animate.css';
+
+
+body {
+    background-color: #F1F8FF !important;
+}
+
+.genericPadding {
+    padding: 0 25px;
+}

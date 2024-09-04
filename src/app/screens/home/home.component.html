@@ -1,0 +1,42 @@
+<div class="flex flex-col">
+  <app-hero>
+    <div
+      class="flex flex-col md:flex-row genericPadding h-full justify-around items-center overflow-hidden md:overflow-visible"
+    >
+      <div
+        class="flex flex-col w-[85%] md:w-[50%] justify-around items-center md:items-start md:mt-20 h-auto"
+      >
+        <h1
+          class="animate__animated animate__slideInLeft text-white mt-10 font-nunito text-4xl md:text-7xl md:text-start text-center font-extrabold"
+        >
+          Enjoy Our Delicious Meal
+        </h1>
+        <p
+          class="text-white animate-slide-in font-heebo text-base text-center py-5 md:text-start"
+        >
+          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+          diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
+          lorem sit clita duo justo magna dolore erat amet
+        </p>
+        <button
+          class="text-white text-base font-nunito animate-partial-slide-in px-7 py-2 md:px-12 md:py-5 my-3 bg-primary rounded-sm"
+        >
+          BOOK A TABLE
+        </button>
+      </div>
+      <img
+        class="animate-spin-slow h-auto w-[75%] md:w-[40%] py-3"
+        src="https://themewagon.github.io/restoran/img/hero.png"
+        alt="rotating-dish"
+      />
+    </div>
+  </app-hero>
+  <div class="flex flex-col genericPadding mt-12">
+      <app-basic-card
+        *ngFor="let card of cards"
+        [icon]="card.icon"
+        [title]="card.title"
+        [description]="card.description"
+      ></app-basic-card>
+  </div>
+</div>
