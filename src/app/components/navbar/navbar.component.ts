@@ -31,6 +31,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   handleNavigate($event:NavbarItem){
+    if($event.subpaths?.length) {
+      console.log('stop');
+      return;
+    }
     this.navbarService.onSwitchRoute($event.path);
   }
 

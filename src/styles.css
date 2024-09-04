@@ -12,3 +12,8 @@ body {
 .genericPadding {
     padding: 0 25px;
 }
+
+a:hover {
+    color: #FB923C;
+    transition: all 0.2s linear;
+}

@@ -1,5 +1,7 @@
 export interface NavbarItem {
     path:string;
-    selected:boolean;
+    selected?:boolean;
     label:string;
+    subpaths?: NavbarItem[];
 }
+

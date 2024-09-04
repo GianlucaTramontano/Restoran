@@ -6,12 +6,14 @@
     ></fa-icon>
     <h1 class="m-5 font-nunito font-semibold text-3xl text-primary">Restoran</h1>
   </div>
-  <div *ngIf="navbar?.length" class="md:flex hidden items-center">
-    <a *ngFor="let item of navbar" (click)="handleNavigate(item)"[ngClass]="{'text-primary': item.selected, 'text-white': !item.selected}" class="cursor-pointer px-2 font-semibold font-heebo">
-      {{ item.label | uppercase }}
-    </a>
+  <nav *ngIf="navbar?.length" class="md:flex hidden items-center">
+    <div *ngFor="let item of navbar">
+      <ng-container 
+        *ngTemplateOutlet="item.subpaths?.length ? dropdownItem : standardItem; context: { $implicit: item }">
+      </ng-container>
+    </div>
     <button class="px-7 py-2 bg-primary text-white hidden md:flex ml-2 mr-5 rounded-sm">BOOK A TABLE</button>
-  </div>
+  </nav>
   <button
     class="border rounded font-nunito p-1 px-3 text-gray-400 h-fit border-solid border-grey-100 mr-5 md:hidden"
     (click)="toggleDropdown()"
@@ -19,3 +21,15 @@
     <fa-icon [classes]="['sm:h-2.5', 'sm:w-2.5']" [icon]="faBars"></fa-icon>
   </button>
 </div>
+
+<ng-template #standardItem let-item>
+  <a (click)="handleNavigate(item)" [ngClass]="{'text-primary': item.selected, 'text-white': !item.selected}" class="cursor-pointer px-2 font-semibold font-heebo">
+    {{ item.label | uppercase }}
+  </a>
+</ng-template>
+
+<ng-template #dropdownItem let-item>
+  <a (click)="handleNavigate(item)" [ngClass]="{'text-primary': item.selected, 'text-white': !item.selected}" class="dropdown-toggle cursor-pointer px-2 font-semibold font-heebo">
+    {{ item.label | uppercase }}
+  </a>
+</ng-template>

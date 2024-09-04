@@ -33,7 +33,21 @@ export class NavbarService {
     {
       path: 'pages',
       label: 'Pages',
-      selected: false
+      selected: false,
+      subpaths: [
+        {
+          path: 'booking',
+          label: 'Booking'
+        },
+        {
+          path: 'our-team',
+          label: 'Our Team'
+        },
+        {
+          path: 'testimonial',
+          label: 'Testimonial'
+        },
+      ]
     },
     {
       path: 'contact',
