@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Restoran';
+  standardNavbarHidden:boolean = false;
+  navbarClasses:string[] = ['']
+
+  handleScrollPage(val:boolean){
+    this.standardNavbarHidden = !val;
+  }
 }

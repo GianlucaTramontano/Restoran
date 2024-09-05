@@ -9,6 +9,7 @@ module.exports = {
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui'],
       'heebo': ['Heebo', 'ui-sans-serif'],
+      'pacifico': ['Pacifico', 'ui-sans-serif'],
       'nunito': ['Nunito', 'ui-sans-serif'],
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
@@ -19,6 +20,7 @@ module.exports = {
       colors: {
         'primary': '#FB923C',
         'secondary': '#0F172B',
+        'secondary-important': '#0F172B !important'
       },
       animation: {
         'spin-slow': 'spin 45s linear infinite',

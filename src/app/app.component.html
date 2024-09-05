@@ -1,5 +1,22 @@
+<app-navbar
+  *ngIf="standardNavbarHidden"
+  [customClasses]="[
+    'md:sticky',
+    'w-full',
+    'md:top-0',
+    'md:left-0',
+    'md:right-0',
+    'z-10',
+    'md:bg-secondary-important',
+    'animate__animated',
+    'animate__slideInDown'
+  ]"
+></app-navbar>  
 <div class="flex flex-col relative bg-zinc-100 w-full 2xl:w-[90%] mx-auto my-0">
-    <app-navbar></app-navbar>
-    <router-outlet>
-    </router-outlet>
+  <app-navbar
+    ngIntersectView
+    (isVisible)="handleScrollPage($event)"
+    [customClasses]="['md:absolute', 'md:top-0', 'md:left-0']"
+  ></app-navbar>
+  <router-outlet> </router-outlet>
 </div>

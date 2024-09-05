@@ -17,3 +17,8 @@ a:hover {
     color: #FB923C;
     transition: all 0.2s linear;
 }
+
+p {
+    color: #666565;
+    font-family: 'Heebo', 'ui-sans-serif';
+}

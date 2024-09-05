@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { IconName } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,5 +10,12 @@ export class BasicCardComponent {
   @Input() icon!:IconName;
   @Input() title!:string;
   @Input() description!:string;
+  @Input() delay!:number;
+
+  isVisible:boolean = false;
   
+  onVisibilityChange(val:boolean){
+    if(this.isVisible) return;
+    this.isVisible = val;
+  }
 }

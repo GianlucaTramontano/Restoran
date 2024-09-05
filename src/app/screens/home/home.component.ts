@@ -9,9 +9,26 @@ import { HomeModule } from './home.module';
 })
 
 export class HomeComponent {
-  cards:any[] = [{
+  cards:any[] = [
+    {
     icon: faUtensils,
     title: 'test',
     description: 'test2'
-  }]
+  },
+  {
+    icon: faUtensils,
+    title: 'test',
+    description: 'test2'
+  },
+  {
+    icon: faUtensils,
+    title: 'test',
+    description: 'test2'
+  },
+  {
+    icon: faUtensils,
+    title: 'test',
+    description: 'test2'
+  }
+]
 }

@@ -31,12 +31,20 @@
       />
     </div>
   </app-hero>
-  <div class="flex flex-col genericPadding mt-12">
-      <app-basic-card
-        *ngFor="let card of cards"
+  <!-- CARDS SECTION START -->
+  <div class="flex flex-col lg:flex-row lg:justify-between w-full genericPadding mt-12">
+      <app-basic-card        
+        *ngFor="let card of cards; let i = index"
+        [ngClass]="['w-full', 'lg:w-[23%]']"
         [icon]="card.icon"
+        [delay]="i * 0.2"
         [title]="card.title"
         [description]="card.description"
       ></app-basic-card>
   </div>
+  <!-- CARDS SECTION END -->
+  <!-- ABOUT US SECTION START -->
+  <app-about-section></app-about-section>
+  <!-- ABOUT US SECTION END -->
+
 </div>

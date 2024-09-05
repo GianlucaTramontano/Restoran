@@ -1,0 +1,16 @@
+.about-section-title {
+    font-family: "Pacifico", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.about-section-title::after {
+    position: absolute;
+    background-color: orange;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+}
