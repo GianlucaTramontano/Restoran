@@ -1,0 +1,9 @@
+<div ngIntersectView [threshold]="1" (isVisible)="onVisible($event)" class="mr-5 w-full flex min-h-100 border-l-[5px] my-4 border-solid border-primary items-center pl-3">
+    <div class="w-auto mr-2 min-w-[20%]">
+        <p class="text-primary text-3xl md:text-4xl lg:text-5xl font-nunito font-extrabold">{{cardValue}}</p>
+    </div>
+    <div class="w-auto">
+        <p class="text-md font-heebo font-regular">{{smallDataCard.description}}</p>
+        <h5 class="text-black text-md font-nunito font-extrabold">{{smallDataCard.title | uppercase}}</h5>
+    </div>
+</div>
