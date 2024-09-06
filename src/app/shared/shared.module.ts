@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgIntersectViewDirective } from '../directives/ng-intersect-view.directive';
 import { AboutSectionComponent } from '../components/about-section/about-section.component';
 import { ImagesCompositionComponent } from '../components/images-composition/images-composition.component';
+import { SmallDataCardComponent } from '../components/small-data-card/small-data-card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ImagesCompositionComponent } from '../components/images-composition/ima
     NgIntersectViewDirective,
     AboutSectionComponent,
     ImagesCompositionComponent,
+    SmallDataCardComponent,
   ],
   imports: [FontAwesomeModule, CommonModule],
   exports: [

@@ -5,6 +5,7 @@ import {
   Output,
   AfterViewInit,
   OnDestroy,
+  Input,
 } from '@angular/core';
 
 @Directive({
@@ -12,6 +13,7 @@ import {
 })
 export class NgIntersectViewDirective implements AfterViewInit, OnDestroy {
   @Output() isVisible = new EventEmitter<boolean>();
+  @Input() threshold:number = 0.1;
 
   private observer!: IntersectionObserver;
 
@@ -24,7 +26,7 @@ export class NgIntersectViewDirective implements AfterViewInit, OnDestroy {
         this.isVisible.emit(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Definisci il valore di visibilità richiesto (ad es. 10% visibile)
+        threshold: this.threshold, // Definisci il valore di visibilità richiesto (ad es. 10% visibile)
       }
     );
 
