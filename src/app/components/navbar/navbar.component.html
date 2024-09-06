@@ -1,18 +1,18 @@
-<div [class]="getClasses()">
-  <div class="flex items-center ml-5">
+<div [class]="getClasses()" class="relative z-50">
+  <div class="flex items-center ml-5 z-20">
     <fa-icon
       [classes]="['h-7', 'w-7', 'md:h-10', 'md:w-10 text-primary']"
       [icon]="faUtensils"
     ></fa-icon>
     <h1 class="m-5 font-nunito font-semibold text-3xl text-primary">Restoran</h1>
   </div>
-  <nav *ngIf="navbar?.length" class="md:flex hidden items-center">
-    <div *ngFor="let item of navbar">
+  <nav *ngIf="navbar?.length" class="z-20 md:flex hidden items-center">
+    <div *ngFor="let item of navbar" class="mr-5">
       <ng-container 
         *ngTemplateOutlet="item.subpaths?.length ? dropdownItem : standardItem; context: { $implicit: item }">
       </ng-container>
     </div>
-    <button class="px-7 py-2 bg-primary text-white hidden md:flex ml-2 mr-5 rounded-sm">BOOK A TABLE</button>
+    <app-basic-button [cta]="'BOOK A TABLE'"></app-basic-button>
   </nav>
   <button
     class="border rounded font-nunito p-1 px-3 text-gray-400 h-fit border-solid border-grey-100 mr-5 md:hidden"
@@ -20,6 +20,23 @@
   >
     <fa-icon [classes]="['sm:h-2.5', 'sm:w-2.5']" [icon]="faBars"></fa-icon>
   </button>
+</div>
+
+<!-- Update the mobile dropdown menu -->
+<div 
+  *ngIf="dropdownToggled"
+  class="pb-4 genericPadding md:hidden absolute left-0 w-full bg-secondary z-40 shadow-lg animate__animated animate__slideInDown"
+>
+  <nav class="flex flex-col items-start py-2">
+    <div *ngFor="let item of navbar" class="mb-3 w-full">
+      <ng-container 
+        *ngTemplateOutlet="item.subpaths?.length ? dropdownItem : standardItem; context: { $implicit: item }">
+      </ng-container>
+    </div>
+  </nav>
+  <div class="flex items-center w-full pb-4">
+    <app-basic-button [cta]="'BOOK A TABLE'"></app-basic-button>
+  </div>
 </div>
 
 <ng-template #standardItem let-item>

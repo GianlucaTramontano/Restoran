@@ -8,6 +8,7 @@ import { NgIntersectViewDirective } from '../directives/ng-intersect-view.direct
 import { AboutSectionComponent } from '../components/about-section/about-section.component';
 import { ImagesCompositionComponent } from '../components/images-composition/images-composition.component';
 import { SmallDataCardComponent } from '../components/small-data-card/small-data-card.component';
+import { BasicButtonComponent } from '../components/basic-button/basic-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SmallDataCardComponent } from '../components/small-data-card/small-data
     AboutSectionComponent,
     ImagesCompositionComponent,
     SmallDataCardComponent,
+    BasicButtonComponent,
   ],
   imports: [FontAwesomeModule, CommonModule],
   exports: [
@@ -27,6 +29,7 @@ import { SmallDataCardComponent } from '../components/small-data-card/small-data
     NgIntersectViewDirective,
     AboutSectionComponent,
     ImagesCompositionComponent,
+    BasicButtonComponent,
   ],
 })
 export class SharedModule {}

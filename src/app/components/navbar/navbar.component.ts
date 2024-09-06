@@ -21,7 +21,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private navbarService: NavbarService) {}
 
   @Input() customClasses:string[] = [''];
-  containerClasses:string[] = ['bg-secondary', 'md:bg-transparent', 'flex', 'justify-between', 'items-center', 'w-full'];
+  containerClasses:string[] = ['bg-secondary', 'md:bg-transparent', 'flex', 'justify-between', 'items-center', 'w-full', 'genericPadding'];
+  isDropdownOpen: boolean = false;
 
   faUtensils = faUtensils;
   faBars = faBars;
@@ -29,15 +30,23 @@ export class NavbarComponent implements OnInit, OnDestroy {
   navbar: NavbarItem[] | null = null;
   dropdown$: Subscription | null = null;
   dropdownToggled: boolean = false;
-
+  cta: string = 'BOOK A TABLE';
   ngOnInit(): void {
     this.navbarSubs$ = this.navbarService.navbar$.subscribe(
-      (navbar) => (this.navbar = navbar)
+      (navbar) => {
+        this.navbar = navbar;
+        console.log('Navbar items:', this.navbar);
+      }
     );
     this.dropdown$ = this.navbarService.dropdownMenu$.subscribe(
-      (val) => (this.dropdownToggled = val)
+      (val) => {
+        this.dropdownToggled = val;
+        console.log('Dropdown toggled:', this.dropdownToggled);
+      }
     );
   }
+
+  handleClick(){}
 
   getClasses(){
     return this.containerClasses.concat(this.customClasses)
@@ -54,6 +63,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       return;
     }
     this.navbarService.onSwitchRoute($event.path);
+    this.toggleDropdown();
   }
 
   toggleDropdown() {
