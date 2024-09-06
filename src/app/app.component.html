@@ -6,7 +6,7 @@
     'md:top-0',
     'md:left-0',
     'md:right-0',
-    'z-10',
+    'z-100',
     'md:bg-secondary-important',
     'animate__animated',
     'animate__slideInDown'
@@ -16,7 +16,7 @@
   <app-navbar
     ngIntersectView
     (isVisible)="handleScrollPage($event)"
-    [customClasses]="['md:absolute', 'md:top-0', 'md:left-0']"
+    [customClasses]="['md:absolute', 'md:top-0', 'md:left-0', 'z-50']"
   ></app-navbar>
   <router-outlet> </router-outlet>
 </div>

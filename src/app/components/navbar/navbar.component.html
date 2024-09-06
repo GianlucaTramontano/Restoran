@@ -1,4 +1,4 @@
-<div [class]="getClasses()" class="relative z-50">
+<div [class]="getClasses()">
   <div class="flex items-center ml-5 z-20">
     <fa-icon
       [classes]="['h-7', 'w-7', 'md:h-10', 'md:w-10 text-primary']"
@@ -12,7 +12,7 @@
         *ngTemplateOutlet="item.subpaths?.length ? dropdownItem : standardItem; context: { $implicit: item }">
       </ng-container>
     </div>
-    <app-basic-button [cta]="'BOOK A TABLE'"></app-basic-button>
+    <app-basic-button [cta]="'BOOK A TABLE'" class="mr-4"></app-basic-button>
   </nav>
   <button
     class="border rounded font-nunito p-1 px-3 text-gray-400 h-fit border-solid border-grey-100 mr-5 md:hidden"

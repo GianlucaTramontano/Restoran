@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private navbarService: NavbarService) {}
 
   @Input() customClasses:string[] = [''];
-  containerClasses:string[] = ['bg-secondary', 'md:bg-transparent', 'flex', 'justify-between', 'items-center', 'w-full', 'genericPadding'];
+  containerClasses:string[] = ['bg-secondary', 'md:bg-transparent', 'flex', 'justify-between', 'items-center', 'w-full'];
   isDropdownOpen: boolean = false;
 
   faUtensils = faUtensils;

@@ -17,6 +17,9 @@ module.exports = {
       'body': ['"Open Sans"'],
     },
     extend: {
+      zIndex: {
+        '100': '100',
+      },
       colors: {
         'primary': '#FB923C',
         'secondary': '#0F172B',
