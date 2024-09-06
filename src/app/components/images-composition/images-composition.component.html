@@ -2,7 +2,7 @@
   ngIntersectView
   (isVisible)="onVisibilityChange($event)"
   id="about-us-images-container"
-  class="w-full h-fit flex flex-wrap"
+  class="w-full h-full flex flex-wrap"
 >
   <div
     *ngFor="let image of images; let i = index"
@@ -13,7 +13,7 @@
       'animate__animated animate__zoomIn justify-end': isVisible && i === 2,
       'animate__animated animate__zoomIn': isVisible
     }"
-    class="flex w-1/2 h-full px-1 py-1"
+    class="flex w-1/2 h-fit px-1 py-1"
   >
     <img
       [src]="image"
