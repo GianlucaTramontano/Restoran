@@ -9,6 +9,7 @@ import { AboutSectionComponent } from '../components/about-section/about-section
 import { ImagesCompositionComponent } from '../components/images-composition/images-composition.component';
 import { SmallDataCardComponent } from '../components/small-data-card/small-data-card.component';
 import { BasicButtonComponent } from '../components/basic-button/basic-button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { BasicButtonComponent } from '../components/basic-button/basic-button.co
     SmallDataCardComponent,
     BasicButtonComponent,
   ],
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule, CommonModule, HttpClientModule],
   exports: [
     HeroComponent,
     BasicCardComponent,
