@@ -10,6 +10,8 @@ import { ImagesCompositionComponent } from '../components/images-composition/ima
 import { SmallDataCardComponent } from '../components/small-data-card/small-data-card.component';
 import { BasicButtonComponent } from '../components/basic-button/basic-button.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     ImagesCompositionComponent,
     SmallDataCardComponent,
     BasicButtonComponent,
+    BreadcrumbComponent
   ],
-  imports: [FontAwesomeModule, CommonModule, HttpClientModule],
+  imports: [FontAwesomeModule, CommonModule, HttpClientModule, RouterModule],
   exports: [
     HeroComponent,
     BasicCardComponent,
@@ -31,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutSectionComponent,
     ImagesCompositionComponent,
     BasicButtonComponent,
+    BreadcrumbComponent
   ],
 })
 export class SharedModule {}

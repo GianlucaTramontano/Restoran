@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-  <app-hero>
+  <app-hero [customClass]="['md:h-screen']">
     <div
       class="flex flex-col md:flex-row genericPadding h-full md:justify-around items-center overflow-hidden md:overflow-visible"
     >
@@ -7,7 +7,7 @@
         class="flex flex-col w-[85%] md:w-[50%] justify-around items-center md:items-start my-20 md:my-0 md:mt-20 h-auto"
       >
         <h1
-          class="animate__animated animate__slideInLeft text-white mt-10 font-nunito text-4xl md:text-7xl md:text-start text-center font-extrabold"
+          class="animate__animated animate__slideInLeft text-white font-nunito text-4xl md:text-7xl md:text-start text-center font-extrabold"
         >
           Enjoy Our Delicious Meal
         </h1>
@@ -21,7 +21,7 @@
         <app-basic-button [cta]="'BOOK A TABLE'"></app-basic-button>
       </div>
       <img
-        class="animate-spin-slow h-auto w-[75%] md:w-[40%] py-3"
+        class="animate-spin-slow h-auto w-[100%] md:w-[40%] py-3"
         src="https://themewagon.github.io/restoran/img/hero.png"
         alt="rotating-dish"
       />
