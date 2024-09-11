@@ -1,0 +1,14 @@
+<div class="my-10 flex flex-col items-center justify-center w-full">
+    <div class="my-2 flex items-center justify-center w-full">
+        <h5 class="relative flex items-center section-title text-primary font-regular text-xl font-pacifico">Food Menu</h5>
+    </div>
+    <h1 class="text-secondary font-extrabold text-3xl font-nunito">Most popular items</h1>
+    <div class="flex flex-row items-center justify-between md:justify-center md:py-5 w-full">
+        <app-menu-navbar></app-menu-navbar>
+    </div>
+    <div class="flex flex-row flex-wrap items-center w-full justify-between gap-5 md:gap-0">
+        <div *ngFor="let menuItem of menuItems" class="w-full md:w-1/2 md:py-2">
+            <app-menu-item-card [menuItem]="menuItem"></app-menu-item-card>
+        </div>
+    </div>
+</div>

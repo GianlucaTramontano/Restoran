@@ -1,0 +1,12 @@
+<div class="flex w-full flex-row items-center flex-wrap gap-5 justify-center my-3">
+  <div *ngFor="let menuSection of menuSections$ | async">
+    <app-menu-navbar-item
+      [id]="menuSection.id"
+      [title]="menuSection.title"
+      [subtitle]="menuSection.subtitle"
+      [icon]="menuSection.icon"
+      [isSelected]="menuSection.selected"
+      (selectMenuSection)="onSelectMenuSection($event)"
+    ></app-menu-navbar-item>
+  </div>
+</div>

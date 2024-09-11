@@ -1,0 +1,12 @@
+<div (click)="onSelectMenuSection(id)" class="h-fit cursor-pointer flex items-center gap-3">
+    <fa-icon [classes]="['text-primary', 'text-4xl']" [icon]="icon"></fa-icon>
+    <div class="flex flex-col items-start">
+        <h5 class="text-tertiary font-heebo text-sm font-regular">
+            {{title}}
+        </h5>
+        <p class="text-secondary font-nunito text-xl font-bold">
+            {{subtitle}}
+        </p>
+    </div>
+</div>
+<div *ngIf="isSelected" class="h-[2px] w-full bg-primary"></div>

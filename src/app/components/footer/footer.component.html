@@ -1,0 +1,60 @@
+<footer class="bg-secondary-important text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Company Section -->
+      <div>
+        <h3 class="text-primary text-xl font-bold mb-4">Company</h3>
+        <ul class="space-y-2">
+          <li *ngFor="let item of companyLinks">
+            <a [routerLink]="item.url" class="hover:text-primary">{{ item.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div>
+        <h3 class="text-primary text-xl font-bold mb-4">Contact</h3>
+        <p *ngFor="let info of contactInfo" class="mb-2">{{ info }}</p>
+        <div class="flex space-x-4">
+          <a *ngFor="let social of socialLinks" [href]="social.url" class="text-white hover:text-primary">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Opening Section -->
+      <div>
+        <h3 class="text-primary text-xl font-bold mb-4">Opening</h3>
+        <div *ngFor="let schedule of openingHours">
+          <p class="mb-2">{{ schedule.days }}</p>
+          <p class="mb-4">{{ schedule.hours }}</p>
+        </div>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div>
+        <h3 class="text-primary text-xl font-bold mb-4">Newsletter</h3>
+        <p class="mb-4">{{ newsletterText }}</p>
+        <form class="flex" (ngSubmit)="onNewsletterSubmit()">
+          <input type="email" [(ngModel)]="emailInput" name="email" placeholder="Your email" class="flex-grow p-2 text-gray-900">
+          <button type="submit" class="bg-primary text-white px-4 py-2">SIGNUP</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-700 mt-8 pt-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <p>{{ copyrightText }}</p>
+      <p>{{ distributionText }}</p>
+      <nav class="mt-4 md:mt-0">
+        <ul class="flex space-x-4">
+          <li *ngFor="let link of bottomLinks">
+            <a [routerLink]="link.url" class="hover:text-primary">{{ link.label }}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

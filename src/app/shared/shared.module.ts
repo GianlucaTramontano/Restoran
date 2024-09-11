@@ -12,6 +12,12 @@ import { BasicButtonComponent } from '../components/basic-button/basic-button.co
 import { HttpClientModule } from '@angular/common/http';
 import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { RouterModule } from '@angular/router';
+import { MenuSectionComponent } from '../components/menu-section/menu-section.component';
+import { MenuNavbarComponent } from '../components/menu-navbar/menu-navbar.component';
+import { MenuNavbarItemComponent } from '../components/menu-navbar-item/menu-navbar-item.component';
+import { MenuItemCardComponent } from '../components/menu-item-card/menu-item-card.component';
+import { FooterComponent } from '../components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,9 +29,14 @@ import { RouterModule } from '@angular/router';
     ImagesCompositionComponent,
     SmallDataCardComponent,
     BasicButtonComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    MenuSectionComponent,
+    MenuNavbarComponent,
+    MenuNavbarItemComponent,
+    MenuItemCardComponent,
+    FooterComponent
   ],
-  imports: [FontAwesomeModule, CommonModule, HttpClientModule, RouterModule],
+  imports: [FontAwesomeModule, CommonModule, HttpClientModule, RouterModule, FormsModule],
   exports: [
     HeroComponent,
     BasicCardComponent,
@@ -34,7 +45,12 @@ import { RouterModule } from '@angular/router';
     AboutSectionComponent,
     ImagesCompositionComponent,
     BasicButtonComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    MenuSectionComponent,
+    MenuNavbarComponent,
+    MenuNavbarItemComponent,
+    MenuItemCardComponent,
+    FooterComponent
   ],
 })
 export class SharedModule {}
