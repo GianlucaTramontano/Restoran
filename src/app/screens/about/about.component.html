@@ -1,5 +1,7 @@
-<app-hero [customClass]="['flex', 'flex-col', 'items-center', 'justify-center', 'min-h-[500px]']">
-    <h1 class="text-white font-nunito text-center text-6xl font-extrabold">About us</h1>
+<app-hero [customClass]="['flex', 'flex-col', 'items-center', 'justify-center', 'min-h-[400px]', 'md:min-h-[500px]']">
+    <div class="relative min-h-[50px] md:min-h-[100px]">
+        <h1 class="animate__animated animate__fadeInDown text-white font-nunito text-center text-4xl font-extrabold md:text-6xl">About us</h1>
+    </div>
     <app-breadcrumb></app-breadcrumb>
 </app-hero>
 <app-about-section></app-about-section>

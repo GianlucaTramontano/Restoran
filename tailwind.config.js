@@ -27,11 +27,22 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 45s linear infinite',
+        'fade-in-down': 'fadeInDown 1s ease-out',
         'slide-in': 'slideIn 1s ease-out',
         'slide-in-slow': 'slideIn 3s ease-out',
         'partial-slide-in': 'partialSlideIn 1s ease-out'
       },
       keyframes: {
+        fadeInDown: {
+          '0%': {
+            opacity: '0',
+            transform: 'translate3d(0, -100%, 0)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateZ(0)'
+          }
+        },
         slideIn: {
           '0%': {
             transform: 'translate3d(-100%, 0, 0)',

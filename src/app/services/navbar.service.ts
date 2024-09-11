@@ -57,18 +57,23 @@ export class NavbarService {
   ]
 
   navbarSubj$:Subject<NavbarItem[]> = new BehaviorSubject<NavbarItem[]>(this.navbar);
+  navbar$:Observable<NavbarItem[]> = this.navbarSubj$.asObservable();
+  appendedNavbarSubj$:Subject<boolean> = new BehaviorSubject<boolean>(false);
+  appendedNavbar$:Observable<boolean> = this.appendedNavbarSubj$.asObservable();
   dropdownMenuSubj$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   dropdownMenu$:Observable<boolean> = this.dropdownMenuSubj$.asObservable();
-  navbar$:Observable<NavbarItem[]> = this.navbarSubj$.asObservable();
 
   onSwitchRoute(route:string){
     for(let item of this.navbar){
-      console.log(item.path, route)
       if(item.path !== route) item.selected = false;
       else item.selected = true;
     }
     this.navbarSubj$.next(this.navbar);
     this.router.navigateByUrl(route)
+  }
+
+  onPageScroll(value:boolean){
+    this.appendedNavbarSubj$.next(value);
   }
   
   onDropdownToggle(){

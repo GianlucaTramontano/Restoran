@@ -1,13 +1,13 @@
-<nav class="flex items-center justify-center my-10">
+<nav class="flex items-center justify-center my-4 md:my-10">
   <ol class="flex items-center gap-2">
-    <li class="text-white">
+    <li class="text-primary">
       <a [routerLink]="['/']">HOME</a>
     </li>
     <ng-container *ngIf="(breadcrumbs$ | async)!.length > 0">
       <li *ngFor="let breadcrumb of breadcrumbs$ | async; let last = last" 
           class="breadcrumb-item">
-        <a class="text-white" *ngIf="!last" [routerLink]="[breadcrumb.url]">/ {{ breadcrumb.label | uppercase }}</a>
-        <span class="text-white" *ngIf="last">/ <span class="text-primary">{{ breadcrumb.label | uppercase }}</span></span>
+        <a class="text-primary" *ngIf="!last" [routerLink]="[breadcrumb.url]">/ {{ breadcrumb.label | uppercase }}</a>
+        <span class="text-white" *ngIf="last">/ <span class="text-white">{{ breadcrumb.label | uppercase }}</span></span>
       </li>
     </ng-container>
   </ol>
