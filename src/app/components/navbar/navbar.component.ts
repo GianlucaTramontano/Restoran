@@ -83,4 +83,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   toggleDropdown() {
     this.navbarService.onDropdownToggle();
   }
+
+  isDropdownVisible = false;
+
+  showDropdown() {
+    this.isDropdownVisible = true;
+  }
+
+  hideDropdown() {
+    this.isDropdownVisible = false;
+  }
 }

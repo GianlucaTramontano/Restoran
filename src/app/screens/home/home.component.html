@@ -28,7 +28,7 @@
     </div>
   </app-hero>
   <!-- CARDS SECTION START -->
-  <div class="flex flex-col lg:flex-row lg:justify-between w-full genericPadding mt-12">
+  <div class="flex flex-col lg:flex-row flex-wrap lg:justify-between w-full genericPadding mt-12">
       <app-basic-card        
         *ngFor="let card of cards; let i = index"
         [ngClass]="['w-full', 'lg:w-[23%]']"
@@ -47,5 +47,8 @@
   <!-- MENU SECTION START -->
    <app-menu-section></app-menu-section>
   <!-- MENU SECTION END -->
-
+   <app-reservation-section></app-reservation-section>
+   <app-team-section></app-team-section>
+   <app-testimonial-section></app-testimonial-section>
 </div>
+<app-footer></app-footer>

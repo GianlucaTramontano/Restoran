@@ -1,0 +1,12 @@
+<div class="my-10 flex flex-col items-center justify-center w-full">
+    <div class="my-2 flex items-center justify-center w-full">
+        <h5 class="relative flex items-center section-title text-primary font-regular text-xl font-pacifico">Team Members</h5>
+    </div>
+    <h1 class="text-secondary font-extrabold text-3xl font-nunito">Our Master Chefs</h1>
+
+    <div class="genericPadding flex flex-col md:flex-row flex-wrap items-start md:items-center justify-center h-fit w-full relative">
+        <div *ngFor="let member of teamMembers" class="top-0 md:w-1/2 xl:w-1/4 my-2 px-4 min-h-[385px] md:min-h-[435px] flex flex-col items-center">
+            <app-team-member-card [member]="member"></app-team-member-card>
+        </div>
+    </div>
+</div>

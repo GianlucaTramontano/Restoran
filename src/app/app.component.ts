@@ -20,7 +20,6 @@ export class AppComponent {
   appendedNavbarFirstTime: boolean = false;
 
   handleScrollPage(val: boolean) {
-    console.log(val);
     this.standardNavbarHidden = !val;
     if (!this.appendedNavbarFirstTime) this.appendedNavbarFirstTime = !val;
   }

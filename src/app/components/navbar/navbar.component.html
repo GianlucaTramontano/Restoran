@@ -46,7 +46,15 @@
 </ng-template>
 
 <ng-template #dropdownItem let-item>
-  <a (click)="handleNavigate(item)" [ngClass]="{'text-primary': item.selected, 'text-white': !item.selected}" class="dropdown-toggle cursor-pointer px-2 font-semibold font-heebo">
-    {{ item.label | uppercase }}
-  </a>
+  <div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+    <a (click)="handleNavigate(item)" [ngClass]="{'text-primary': item.selected, 'text-white': !item.selected}" class="dropdown-toggle cursor-pointer px-2 font-semibold font-heebo">
+      {{ item.label | uppercase }}
+    </a>
+    <div class="dropdown-menu" [class.show]="isDropdownVisible">
+      <a *ngFor="let subitem of item.subpaths" (click)="handleNavigate(subitem)" [ngClass]="{'text-white bg-primary': subitem.selected, 'text-secondary': !subitem.selected}" class="cursor-pointer px-2 font-semibold font-heebo">
+        {{ subitem.label | uppercase }}
+      </a>
+    </div>
+  </div>
 </ng-template>
+

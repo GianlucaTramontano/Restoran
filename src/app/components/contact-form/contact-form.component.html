@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" class="flex flex-col items-stretch justify-between h-full">
+        <div class="flex flex-col md:flex-row gap-3 h-1/4 md:gap-2">
+          <input
+            type="text"
+            placeholder="Your Name"
+            [(ngModel)]="name"
+            name="name"
+            class="w-full md:w-1/2"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            [(ngModel)]="email"
+            name="email"
+            class="w-full md:w-1/2"
+          />
+        </div>
+        <input
+          type="text"
+          placeholder="Subject"
+          [(ngModel)]="subject"
+          name="subject"
+          class="h-1/4"
+        />
+        <textarea
+          placeholder="Message"
+          [(ngModel)]="message"
+          name="message"
+          class="h-1/4"
+        ></textarea>
+        <button type="submit">SEND MESSAGE</button>
+</form>

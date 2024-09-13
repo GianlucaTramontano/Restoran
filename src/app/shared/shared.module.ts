@@ -10,15 +10,20 @@ import { ImagesCompositionComponent } from '../components/images-composition/ima
 import { SmallDataCardComponent } from '../components/small-data-card/small-data-card.component';
 import { BasicButtonComponent } from '../components/basic-button/basic-button.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { RouterModule } from '@angular/router';
+import { BreadcrumbComponent } from '../components/breadcrumb/breadcrumb.component';
 import { MenuSectionComponent } from '../components/menu-section/menu-section.component';
 import { MenuNavbarComponent } from '../components/menu-navbar/menu-navbar.component';
 import { MenuNavbarItemComponent } from '../components/menu-navbar-item/menu-navbar-item.component';
 import { MenuItemCardComponent } from '../components/menu-item-card/menu-item-card.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
-
+import { ReservationSectionComponent } from '../components/reservation-section/reservation-section.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TeamSectionComponent } from '../components/team-section/team-section.component';
+import { TeamMemberCardComponent } from '../components/team-member-card/team-member-card.component';
+import { TestimonialSectionComponent } from '../components/testimonial-section/testimonial-section.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     HeroComponent,
@@ -34,9 +39,13 @@ import { FormsModule } from '@angular/forms';
     MenuNavbarComponent,
     MenuNavbarItemComponent,
     MenuItemCardComponent,
-    FooterComponent
+    FooterComponent,
+    ReservationSectionComponent,
+    TeamSectionComponent,
+    TeamMemberCardComponent,
+    TestimonialSectionComponent
   ],
-  imports: [FontAwesomeModule, CommonModule, HttpClientModule, RouterModule, FormsModule],
+  imports: [FontAwesomeModule, CommonModule, HttpClientModule, RouterModule, FormsModule, ReactiveFormsModule, CarouselModule],
   exports: [
     HeroComponent,
     BasicCardComponent,
@@ -50,7 +59,11 @@ import { FormsModule } from '@angular/forms';
     MenuNavbarComponent,
     MenuNavbarItemComponent,
     MenuItemCardComponent,
-    FooterComponent
+    FooterComponent,
+    ReservationSectionComponent,
+    TeamSectionComponent,
+    TeamMemberCardComponent,
+    TestimonialSectionComponent
   ],
 })
 export class SharedModule {}

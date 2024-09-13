@@ -1,0 +1,32 @@
+.footer-section-title {
+    font-family: "Pacifico", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    position: relative;
+}
+
+.footer-section-title::after {
+    position: absolute;
+    background-color: orange;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+}
+
+.btn.btn-link::before {
+    position: relative;
+    content: ">";
+    margin-right: 10px;
+}
+
+.btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    text-transform: capitalize;
+    transition: .3s;
+}

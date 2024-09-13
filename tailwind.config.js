@@ -24,7 +24,8 @@ module.exports = {
         'primary': '#FB923C',
         'secondary': '#0F172B',
         'secondary-important': '#0F172B !important',
-        'tertiary': '#666565'
+        'tertiary': '#666565',
+        'white': '#FFFFFF !important'
       },
       animation: {
         'spin-slow': 'spin 45s linear infinite',

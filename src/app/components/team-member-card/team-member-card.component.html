@@ -1,0 +1,29 @@
+<div
+  class="team-member-card overflow-hidden md:max-w-[400px] md:h-[400px] w-full px-4 bg-white rounded-lg shadow-md relative"
+>
+  <div class="flex flex-col justify-start items-center h-[340px] md:h-[400px] pt-4">
+    <div class="w-[85%] h-auto rounded-full overflow-hidden">
+        <img
+          [src]="member.imageUrl"
+          [alt]="member.fullName"
+          class="rounded-full w-full h-auto object-cover hover:scale-110 transition-all duration-300"
+        />
+    </div>
+    <h3 class="text-xl font-bold py-2">{{ member.fullName }}</h3>
+    <p class="text-gray-600">{{ member.designation }}</p>
+  </div>
+  <div class="relative h-[35px] flex flex-col justify-end items-center">
+    <div class="flex w-full justify-center gap-2 items-end bottom-0 left-0 right-0">
+      <ng-container *ngFor="let link of member.socialLinks">
+        <a
+          *ngIf="link.url"
+          [href]="link.url"
+          target="_blank"
+          class="text-white bg-orange-500 bg-orange-600 rounded-t-lg p-2 w-8 h-8 flex self-end"
+        >
+          <i [class]="'fab ' + link.icon"></i>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</div>

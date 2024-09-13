@@ -40,7 +40,7 @@ export class NavbarService {
           label: 'Booking'
         },
         {
-          path: 'our-team',
+          path: 'team',
           label: 'Our Team'
         },
         {
@@ -65,7 +65,15 @@ export class NavbarService {
 
   onSwitchRoute(route:string){
     for(let item of this.navbar){
-      if(item.path !== route) item.selected = false;
+      if(item.path !== route) {
+        if(!item.subpaths?.length) item.selected = false;
+        else {
+          for(let subitem of item.subpaths){
+            if(subitem.path !== route) subitem.selected = false;
+            else subitem.selected = true;
+          }
+        }
+      }
       else item.selected = true;
     }
     this.navbarSubj$.next(this.navbar);

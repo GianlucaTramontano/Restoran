@@ -27,6 +27,30 @@ const routes: Routes = [
     }
   },
   { 
+    path: 'booking', 
+    loadChildren: () =>
+      import('./screens/booking/booking.module').then(m => m.BookingModule),
+    data: {
+      preload: true
+    }
+  },
+  { 
+    path: 'team', 
+    loadChildren: () =>
+      import('./screens/team/team.module').then(m => m.TeamModule),
+    data: {
+      preload: true
+    }
+  },
+  { 
+    path: 'testimonial', 
+    loadChildren: () =>
+      import('./screens/testimonial/testimonial.module').then(m => m.TestimonialModule),
+    data: {
+      preload: true
+    }
+  },
+  { 
     path: 'service', 
     loadChildren: () =>
       import('./screens/service/service.module').then(m => m.ServiceModule),

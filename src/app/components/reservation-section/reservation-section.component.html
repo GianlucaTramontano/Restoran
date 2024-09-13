@@ -1,0 +1,57 @@
+<section class="reservation-section w-full flex flex-col md:flex-row relative bg-secondary">
+  <div class="video-container w-full md:w-1/2 relative flex justify-center items-center h-[500px]">
+    <img src="https://themewagon.github.io/restoran/img/video.jpg" alt="Video thumbnail" class="w-full h-full object-cover">
+    <div class="play-button absolute top-0 left-0 w-full h-full flex justify-center items-center">
+      <button class="bg-primary absolute animate-ping rounded-full p-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="opacity-0 bg-primary h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </button>
+      <button class="bg-primary absolute rounded-full p-4" (click)="openVideoModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="bg-primary h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="form-container genericPadding w-full md:w-1/2 bg-navy-blue">
+    <h2 class="text-primary text-lg mb-2 pt-5">Reservation</h2>
+    <h3 class="text-white text-3xl font-bold mb-6">Book A Table Online</h3>
+    <form (ngSubmit)="onSubmit()" #reservationForm="ngForm" class="flex flex-col space-y-4 pb-5">
+      <div class="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
+        <input type="text" name="name" [(ngModel)]="reservation.name" placeholder="Your Name" class="placeholder:text-tertiary text-tertiary w-full p-3 rounded" required>
+        <input type="email" name="email" [(ngModel)]="reservation.email" placeholder="Your Email" class="placeholder:text-tertiary text-tertiary w-full p-3 rounded" required>
+      </div>
+      <div class="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
+        <input type="datetime-local" name="dateTime" [(ngModel)]="reservation.dateTime" class="text-tertiary w-full p-3 rounded" required>
+        <select name="people" [ariaPlaceholder]="'No Of People'" [(ngModel)]="reservation.people" class="text-tertiary appearance-none w-full p-3 rounded" required>
+          <option *ngIf="!reservation.people" value="" class="text-tertiary" selected>No Of People</option>
+          <option *ngFor="let option of peopleOptions" [value]="option">
+            People {{ option }}
+          </option>
+        </select>
+      </div>
+      <textarea name="specialRequest" [(ngModel)]="reservation.specialRequest" placeholder="Special Request" class="placeholder:text-tertiary text-tertiary w-full p-3 rounded mb-4" rows="4"></textarea>
+      <app-basic-button [cta]="'BOOK NOW'" class="w-full"></app-basic-button>
+    </form>
+  </div>
+
+  <!-- Video Modal -->
+  <div *ngIf="isVideoModalOpen" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div class="bg-white p-4 rounded-lg max-w-3xl w-full">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold">Youtube Video</h2>
+        <button (click)="closeVideoModal()" class="text-tertiary hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe width="560" height="315" [src]="safeVideoUrl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>

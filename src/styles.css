@@ -4,9 +4,9 @@
 @tailwind utilities;
 @import 'animate.css';
 
-
 body {
     background-color: #F1F8FF !important;
+    width: 100%;
 }
 
 .genericPadding {
@@ -21,4 +21,19 @@ a:hover {
 p {
     color: #666565;
     font-family: 'Heebo', 'ui-sans-serif';
+}
+
+.owl-item.active.center {
+    transition: all 0.2s linear;
+    background-color: #FB923C;
+    color: white !important;
+}
+
+.owl-item.active.center p {
+    transition: all 0.2s linear;
+    color: white !important;
+}
+
+.owl-item.active.center  svg {
+    color: white !important;
 }

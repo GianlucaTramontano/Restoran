@@ -1,0 +1,18 @@
+.team-member-card:hover {
+  height: 375px;
+}
+
+.team-member-card {
+  height: 340px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .team-member-card {
+    height: 400px;
+  }
+  
+  .team-member-card:hover {
+    height: 435px;
+  }
+}
